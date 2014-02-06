@@ -10,6 +10,28 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	var length = $(".anagramx").length;
+	console.log(length);
+	$(".anagramx").click(projectClick);
+
+}
+
+function projectClick(e){
+	// prevent the page from reloading;
+	e.preventDefault();
+
+	// retrieve the current name 
+	var currentName = $(this).text();
+	console.log($(this));
+	console.log("currentName = " + currentName);
+
+	// return new name
+	var newName = anagrammedName(currentName);
+	console.log("newName = " + newName);
+
+	// change text
+	$(this).text(newName);
 }
 
 function anagrammedName(name) {
